@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!--fonts      -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>Wellness Check In</title>
+</head>
+<body>
+
+    <div class="bgFur bgAngle">
+        <div class="container">
+
+            <div class="col-9 block">
+                <div class="col-12 center p-sm fullHeight flexColCenter" id="start">
+                    <div class="hero center">
+                        <h1 class="xl">South Plains SPCA Check In</h1>
+                        </br></br>
+                        <div>
+                            <h2 class="large">Which Service are you here for?</h2>
+                            <div class="block"></div>
+                            <a class="buttonGold" href="#wellnessCheckIn">Wellness</a>
+                            <a class="buttonPrimary" href="#finalizationCheckIn">Finalizing Adoption</a>
+                            <button id="intakeBtn" class="buttonDark">Intake</button>
+                            <div class="modal" id="intakeModal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <h3 class="large">Intake</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 p-sm center flexCol fullHeight" id="wellnessCheckIn">
+                    <div>
+                        <h2 class="large">Wellness Check In</h2>
+                        <p>Find and click your pet's (SPSPCA) name to check them in</p>
+                    </div>
+                    <div id="wellnessButtons" class="buttonsList">
+                    </div>
+                    <div>
+                        <h3 class="mt-md mb-sm med">Dont see your pet's name?</h3>
+                        <p>Add it here to check in to Wellness.</p>
+                        <div id="wellness">
+                            <form action="" class="center centerAlign" id="formWellness">
+                                <div class="formInput">
+                                    <label for="add_pet_name">
+                                        Your pet's name
+                                    </label>
+                                    <input type="text" class="inputBtnSideBySide" name="add_pet_name" id="nameWellness">
+
+                                    <input type="submit" class="buttonGold" name="add_name"
+                                        value="CHECK IN TO WELLNESS">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="mt-sm">
+                            <a href="#start">Go Back to Start</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 center p-sm fullHeight flexCol" id="finalizationCheckIn">
+                    <div>
+                        <h2 class="large">Finalizing Adoption Check In</h2>
+                        <p>Find and click your pet's (SPSPCA) name toto check them in. </br> <i>If you are here
+                                for both
+                                wellness and finalization, please check in to wellness first, then check in here after
+                                wellness
+                                is complete.</i></p>
+                    </div>
+                    <div id="finalizingButtons" class="buttonsList">
+                    </div>
+                    <div>
+                        <h3 class="mt-md mb-sm med">Dont see your pet's name?</h3>
+                        <p>Add it here to check in for finalizing your adoption.</p>
+                        <div id="finalization">
+                            <form action="" id="formFinalization" class="center centerAlign">
+                                <div class="formInput">
+                                    <label for="add_name">
+                                        Your pet's name
+                                    </label>
+                                    <input type="text" class="inputBtnSideBySide" name="add_pet_name_final"
+                                        id="nameFinalization">
+
+                                    <input type="submit" class="buttonGold" name="add_pet_name_final"
+                                        value="CHECK IN TO FINALIZE">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="mt-sm">
+                            <a href="#start">Go Back to Start</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-3" id="checkInOrder">
+                <div class="checkInList">
+                    <h4>Wellness Order</h4>
+                    <ol id="wellnessOrder">
+                        <!-- wellness buttons created by javascript wil end up here-->
+                    </ol>
+                </div>
+                <div class="checkInList">
+                    <h4>Finalizing Adoption Order</h4>
+                    <ol id="finalizingOrder">
+                        <!-- finalization buttons created by javascript wil end up here-->
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Trigger/Open The Modal -->
+        <button id="bulkBtn">Bulk Add Animals</button>
+
+        <!-- The Modal -->
+        <div id="bulkAddModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div>
+                    <h3 class="large center">Bulk Adding</h3>
+                    <div class="container">
+                        <!--wellness bulk add-->
+                        <div class="col-6 block" id="wellness">
+                            <div>
+
+                                <h3 class="med">Wellness Prep</h3>
+                                <form action="" id="wellnessPrep">
+                                    <div class="formInput mb-sm">
+                                        <div class="my-xs">
+                                            <label for="wellnessPrepName">
+                                                Type SPSPCA pet name
+                                            </label>
+                                        </div>
+                                        <input type="text" name="add_name" class="inputBtnSideBySide inputSmall"
+                                            id="wellnessPrepName">
+
+                                        <input class="button buttonGold bulk inputBtnSideBySide" type="submit"
+                                            value="ADD TO WELLNESS" id="btnWellnessPrep">
+                                    </div>
+                                </form>
+                                <div>
+                                    <ol class="wellnessListTemp">
+
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- finalization bulk add-->
+                        <div class="col-6 block" id="finalization">
+                            <div>
+                                <h3 class="med">Adoption Finalization Prep</h3>
+                                <form action="" id="finalizationPrep">
+                                    <div class="formInput">
+                                        <div class="my-xs">
+                                            <label for="finalizationPrepName">
+                                                Add Animal Name
+                                            </label>
+                                        </div>
+                                        <input type="text" name="add_name" class="inputSmall inputBtnSideBySide"
+                                            id="finalizationPrepName">
+
+                                        <input class="button bulk inputBtnSideBySide buttonGold" type="submit"
+                                            value="ADD TO FINALIZATION" id="btnFinalizationPrep">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!--end bulk add div blocks-->
+                    </div>
+                    <!--<div class="center mt-md">
+                        <button class="buttonGold">Create Check In Lists</button>
+
+                    </div>
+                    <span class="cancelLink">Cancel</span>-->
+                </div>
+            </div>
+            <!--End modal-->
+
+
+        </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+    <!--<script src="colorchange.js"></script>-->
+</body>
+</html>
